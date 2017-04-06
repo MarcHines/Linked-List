@@ -16,3 +16,19 @@ public ListNode reverseList(ListNode head) {
         
         return newNode;
     }
+
+//Iterative
+public static Node reverse(Node node) {
+        Node previous = null;
+        Node current = node;
+        Node after = null;
+        
+        while (current != null) {
+            previous = current.next;
+            current.next = after;
+            after = current;
+            current = previous;
+        }
+        node = after;
+        return node;
+    }
